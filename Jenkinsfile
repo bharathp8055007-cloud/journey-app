@@ -18,6 +18,15 @@ pipeline {
                     sh 'docker push $IMAGE'
                 }
             }
-        }
-    }
+ 
+          }
+          stage('Deploy') {
+            steps {
+                sh 'kubectl set image deployment/journey-app journey-app=$IMAGE'
+                sh 'kubectl rollout status deployment/journey-app --timeout=60s'
+
+                }
+            }
+
+      }
 }
