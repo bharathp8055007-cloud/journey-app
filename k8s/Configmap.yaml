@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+   name: journey-config
+data:
+   GREETING: "Namaste"
+   APP_ENV: "test"

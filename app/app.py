@@ -7,7 +7,7 @@ APP_ENV = os.environ.get("APP_ENV", "unkown")
 
 @app.route("/")
 def home():
-    return f"{GREETING} from Journey app ({APP_env}), version 4"
+    return f"{GREETING} from Journey app ({APP_ENV}), version 4"
 
 app.run(host="0.0.0.0", port=5000)
 
